@@ -15,12 +15,19 @@ namespace CorporateDirectory1 {
 	[MonoTouch.Foundation.Register("AppDelegate")]
 	public partial class AppDelegate {
 		
+		private MonoTouch.UIKit.UIWindow __mt_window;
+		
+		private MonoTouch.UIKit.UITableView __mt_tableviewEmployee;
+		
+		#pragma warning disable 0169
 		[MonoTouch.Foundation.Connect("window")]
 		private MonoTouch.UIKit.UIWindow window {
 			get {
-				return ((MonoTouch.UIKit.UIWindow)(this.GetNativeField("window")));
+				this.__mt_window = ((MonoTouch.UIKit.UIWindow)(this.GetNativeField("window")));
+				return this.__mt_window;
 			}
 			set {
+				this.__mt_window = value;
 				this.SetNativeField("window", value);
 			}
 		}
@@ -28,9 +35,11 @@ namespace CorporateDirectory1 {
 		[MonoTouch.Foundation.Connect("tableviewEmployee")]
 		private MonoTouch.UIKit.UITableView tableviewEmployee {
 			get {
-				return ((MonoTouch.UIKit.UITableView)(this.GetNativeField("tableviewEmployee")));
+				this.__mt_tableviewEmployee = ((MonoTouch.UIKit.UITableView)(this.GetNativeField("tableviewEmployee")));
+				return this.__mt_tableviewEmployee;
 			}
 			set {
+				this.__mt_tableviewEmployee = value;
 				this.SetNativeField("tableviewEmployee", value);
 			}
 		}
